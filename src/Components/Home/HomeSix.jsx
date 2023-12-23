@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import homeSix from  "./index.js";
 import Diaglog from "../Diaglog.jsx";
-import { FaUserCircle } from "react-icons/fa";
+//import { FaUserCircle } from "react-icons/fa";
 
 export default function HomeSix() {
 

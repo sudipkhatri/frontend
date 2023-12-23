@@ -13,11 +13,8 @@ export default function Diaglog({ handleToggleDialog }) {
   };
 
   const handlChange = (e) => {
-    e.preventDefault();
-    setValue((prev) => {
-      return { ...prev, [e.target.name]: e.target.value };
-    });
-  };
+   setValue({ ...value, [e.target.name]: e.target.value });
+  };          
 
   return (
     <div className="fixed z-10 overflow-y-scroll top-0 w-full left-0">

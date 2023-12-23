@@ -13,37 +13,28 @@ export default function Auth() {
   const dispatch = useDispatch();
   const [input, setInput] = useState({ name: "", email: "", password: "" });
   const [isSignUp, setIsSignUp] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
   const handleChange = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
   };
 
-  const sendRequest = async (type = "login") => {
-    try {
-      const res = await axios.post(
-        `${url}/api/user/${type}`,
-        input
-      );      
-      return res.data;
-    } catch (err) {  
-      setInput({
-        name: "",
-        email: "",
-        password: "",
-      });    
-      if (err.response && err.response.data) {
-        if (err.response.status === 400) {
-          setError(err.response.data.message);          
-        } else {
-          setError("An error occurred. Please try again.");
-        }
-      } else {
-        setError("Network error. Please check your connection.");
-      }
-      return null;
-    }
-  };
+   const sendRequest = async (type = "login") => {
+     setLoading(true);
+     try {
+       const res = await axios.post(`${url}/api/user/${type}`, input);
+       return res.data;
+     } catch (err) {
+       setError(
+         err.response?.data?.message ||
+           "Network error. Please check your connection."
+       );
+       return null;
+     } finally {
+       setLoading(false);
+     }
+   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -121,7 +112,7 @@ export default function Auth() {
                   type="password"
                   name="password"
                   value={input.password}
-                  onChange={handleChange}                  
+                  onChange={handleChange}
                   required
                   className="block w-full p-3 rounded bg-gray-200 outline-none border focus:border-indigo-600"
                 />
@@ -131,7 +122,7 @@ export default function Auth() {
                 type="submit"
                 className="w-full p-3 mt-4 bg-indigo-600 text-white rounded shadow"
               >
-                {isSignUp ? "Sign Up" : "Login"}
+                {loading ? "Loading..." : isSignUp ? "Sign Up" : "Login"}
               </button>
             </form>
           </div>

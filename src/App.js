@@ -39,8 +39,9 @@ function App() {
       <main>
         <Suspense fallback={<Loader />}>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/rent" element={<AllProperty />} />            
+            <Route path={"/"} element={<Home />} />
+            <Route path={"/frontend"} element={<Home />} />
+            <Route path="/rent" element={<AllProperty />} />
             {!isLoggedIn ? (
               <>
                 <Route path="/login" element={<Auth />} />
