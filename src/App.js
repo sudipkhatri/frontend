@@ -39,20 +39,20 @@ function App() {
       <main>
         <Suspense fallback={<Loader />}>
           <Routes>
-            <Route path={"/frontend"} element={<Home />} />
-            <Route path="/frontend/rent" element={<AllProperty />} />
+            <Route path={"/"} element={<Home />} />
+            <Route path="/rent" element={<AllProperty />} />
             {!isLoggedIn ? (
               <>
-                <Route path="/frontend/login" element={<Auth />} />
-                <Route path="/frontend/contact" element={<Contact />} />
-                <Route path="/frontend/about" element={<About />} />
+                <Route path="/login" element={<Auth />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/about" element={<About />} />
               </>
             ) : (
               <>
-                <Route path="/frontend/dash" element={<Dashboard />} />
-                <Route path="/frontend/add" element={<AddPost />} />
-                <Route path="/frontend/mypost" element={<MyPost />} />
-                <Route path="/frontend/post/update/:id" element={<Update />} />
+                <Route path="/dash" element={<Dashboard />} />
+                <Route path="/add" element={<AddPost />} />
+                <Route path="/mypost" element={<MyPost />} />
+                <Route path="/post/update/:id" element={<Update />} />
               </>
             )}
             <Route path="*" element={<Error />} />
