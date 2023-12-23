@@ -36,7 +36,7 @@ export default function Update() {
         });
       };
       defaultInput();
-    }, [id]);
+    }, [id, token]);
 
     const sendRequest = async () => {
       const res = await axios

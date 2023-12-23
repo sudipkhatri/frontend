@@ -5,7 +5,7 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./Store";
-import Home from "./Components/Home/Home";
+//import Home from "./Components/Home/Home";
 
 // const router = createBrowserRouter([
 //   {

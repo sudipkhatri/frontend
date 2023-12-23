@@ -13,7 +13,7 @@ export default function AddPost() {
     price: "",
     address: "",
   });
-  const [error, setError] = useState('');
+  //const [error, setError] = useState('');
 
   const postRequest = async () => {
     const res = await axios
@@ -43,10 +43,10 @@ export default function AddPost() {
   postRequest().then(navigator("/dash"));
   };
 
-  const verifyYoutube = () =>{
-    let isEmbed = input.imageUrl;
-    !isEmbed.includes('embed') && setError(true);
-  }
+  // const verifyYoutube = () =>{
+  //   let isEmbed = input.imageUrl;
+  //   !isEmbed.includes('embed') && setError(true);
+  // }
 
   return (
     <div className="container mx-auto min-h-[80vh] py-6 border-t">
