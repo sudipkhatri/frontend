@@ -1,5 +1,5 @@
 import React from "react";
-import blogs from "./index.js";
+import {blogs} from "./index.js";
 
 export default function HomeFive() {
   return (
@@ -10,7 +10,7 @@ export default function HomeFive() {
         </h2>
 
         <div className="grid grid-cols-1 px-6 gap-3 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
-          {blogs[1].map((blog, index) => {
+          {blogs.map((blog, index) => {
             const { title, url, desc } = blog;
             return (
               <div

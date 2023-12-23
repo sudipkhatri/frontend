@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import homeSix from  "./index.js";
+import { homeSix } from "./index.js";
 import Diaglog from "../Diaglog.jsx";
 //import { FaUserCircle } from "react-icons/fa";
 
@@ -16,7 +16,7 @@ export default function HomeSix() {
 
         <div className="grid grid-cols-1 px-6 gap-3 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
           {
-            homeSix[0].map((li, index) =>{
+            homeSix.map((li, index) =>{
               const {title, desc, url} = li;              
               return (
                 <div

@@ -2,7 +2,7 @@ import { ReactComponent as Money } from "../../Images/money.svg";
 import { ReactComponent as Location } from "../../Images/map.svg";
 import { ReactComponent as Agent } from "../../Images/agent.svg";
 
-const blogs = [
+export const blogs = [
   {
     title: "Sydney Top Suburbs",
     url: "https://cdn.pixabay.com/photo/2014/09/18/11/56/skyscrapers-450793_1280.jpg",
@@ -25,7 +25,7 @@ const blogs = [
   },
 ];
 
-const homeSix = [
+export const homeSix = [
   {
     title: "Steve Smith",
     desc: "Steve is one of Sydney's top realestate agent for past 20 years. He is the man for your dream house.",
@@ -48,7 +48,7 @@ const homeSix = [
   },
 ];
 
-const propertyLists = [
+export const propertyLists = [
   {
     title: "Estimated Property Prices",
     url: <Money />,
@@ -68,4 +68,3 @@ const propertyLists = [
 
 
 
-export default [homeSix, blogs, propertyLists];

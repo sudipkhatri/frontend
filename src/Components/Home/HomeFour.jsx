@@ -1,5 +1,5 @@
 import React from 'react';
-import propertyLists from "./index.js";
+import { propertyLists } from './index.js';
 
 
 export default function HomeFour() {
@@ -13,7 +13,7 @@ export default function HomeFour() {
         <div className="grid grid-cols-1 px-6 gap-3 sm:grid-cols-2 md:grid-cols-3 gap-y-8">
 
           {
-            propertyLists[2].map((list, index) =>{
+            propertyLists.map((list, index) =>{
               const {title, url, desc} = list;
               return (
                 <div
