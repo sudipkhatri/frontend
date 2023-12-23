@@ -23,7 +23,7 @@ export default function Header() {
       <nav className="bg-white py-2 md:py-4 z-10 w-full absolute md:static">
         <div className="container px-4 mx-auto md:flex md:items-center">
           <div className="flex justify-between items-center">
-            <Link to="/" className="font-bold text-xl text-indigo-600 ">
+            <Link to="/frontend" className="font-bold text-xl text-indigo-600 ">
               ESTATE
             </Link>
             <button
@@ -45,7 +45,7 @@ export default function Header() {
             md:flex flex-col md:flex-row md:ml-auto mt-3 md:mt-0`}
           >
             <Link
-              to={userID ? "/dash" : "/"}
+              to={userID ? "/frontend/dash" : "/frontend"}
               className="p-2 lg:px-4 md:mx-2 text-white rounded bg-indigo-600"
             >
               {userID ? "All Posts" : "Home"}
@@ -53,7 +53,7 @@ export default function Header() {
 
             {!userID ? (
               <Link
-                to="/rent"
+                to="/frontend/rent"
                 className="relative p-2 lg:px-4 btn4 overflow-hidden md:mx-2 text-gray-600 rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300"
               >
                 <span className="absolute inset-x-0 h-[2.5px] bottom-0 bg-black"></span>
@@ -61,7 +61,7 @@ export default function Header() {
               </Link>
             ) : (
               <Link
-                to="/mypost"
+                to="/frontend/mypost"
                 className="relative p-2 lg:px-4 btn4 overflow-hidden md:mx-2 text-gray-600 rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300"
               >
                 <span className="absolute inset-x-0 h-[2.5px] bottom-0 bg-black"></span>
@@ -70,7 +70,7 @@ export default function Header() {
             )}
             {userID && (
               <Link
-                to="/add"
+                to="/frontend/add"
                 className="relative p-2 lg:px-4 btn4 overflow-hidden 
               md:mx-2 text-gray-600 rounded hover:bg-gray-200 
               hover:text-gray-700 transition-colors duration-300
@@ -83,7 +83,7 @@ export default function Header() {
 
             {!userID && (
               <Link
-                to="/contact"
+                to="/frontend/contact"
                 className="relative p-2 lg:px-4 btn4 overflow-hidden md:mx-2 text-gray-600 rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300"
               >
                 <span className="absolute inset-x-0 h-[2.5px] bottom-0 bg-black"></span>
@@ -92,7 +92,7 @@ export default function Header() {
             )}
 
             <Link
-              to="/login"
+              to="/frontend/login"
               onClick={() => dispatch(authActions.logout())}
               className="p-2 lg:px-4 md:mx-2 text-black text-center border border-solid border-indigo-600 rounded hover:bg-indigo-600 hover:text-white transition-colors duration-300 mt-1 md:mt-0 md:ml-1"
             >
